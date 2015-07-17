@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     //Informs the engine that the player is grounded.
     public bool isGrounded = false;
     //Players Health
-    public int playersHealth = 100;
+    public float playersHealth = 100;
 
 	// Use this for initialization
 	void Start () 
