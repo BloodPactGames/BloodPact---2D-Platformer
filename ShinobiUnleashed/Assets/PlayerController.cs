@@ -14,13 +14,15 @@ public class PlayerController : MonoBehaviour
     //Informs the engine that the player is grounded.
     public bool isGrounded = false;
     //Players Health
-    public int playersHealth = 100;
+    public float playersHealth = 100;
     //Which side the player is on
     public bool playerOnLeft = false;
     public bool playerOnRight = false;
 
     public bool playerOnLeftWall = false;
     public bool playerOnRightWall = false;
+
+    public bool playerOnWall = false;
 	// Use this for initialization
 	void Start () 
     {
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        
+        Debug.Log(playersHealth);
 	}
 
     void OnTriggerEnter(Collider other)
@@ -47,14 +49,18 @@ public class PlayerController : MonoBehaviour
         {
             playerOnRight = true;
         }
-        if (other.tag == "LeftWall")
-        {
-            playerOnLeftWall = true;
-        }
-        if (other.tag == "RightWall")
-        {
-            playerOnRightWall = true;
-        }
+      if (other.tag == "LeftWall")
+      {
+          playerOnLeftWall = true;
+      }
+      if (other.tag == "RightWall")
+      {
+          playerOnRightWall = true;
+      }
+       //if(other.tag == "Wall")
+       //{
+       //    playerOnWall = true;
+       //}
 
     }
 
@@ -72,14 +78,18 @@ public class PlayerController : MonoBehaviour
         {
             playerOnRight = false;
         }
-        if (other.tag == "LeftWall")
-        {
-            playerOnLeftWall = false;
-        }
-        if (other.tag == "RightWall")
-        {
-            playerOnRightWall = false;
-        }
+      if (other.tag == "LeftWall")
+      {
+          playerOnLeftWall = false;
+      }
+      if (other.tag == "RightWall")
+      {
+          playerOnRightWall = false;
+      }
+       //if (other.tag == "Wall")
+       //{
+       //    playerOnWall = false;
+       //}
     }
     void FixedUpdate()
     {
