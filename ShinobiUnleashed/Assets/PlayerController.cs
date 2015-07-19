@@ -15,7 +15,12 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded = false;
     //Players Health
     public int playersHealth = 100;
+    //Which side the player is on
+    public bool playerOnLeft = false;
+    public bool playerOnRight = false;
 
+    public bool playerOnLeftWall = false;
+    public bool playerOnRightWall = false;
 	// Use this for initialization
 	void Start () 
     {
@@ -30,12 +35,51 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        isGrounded = true;
+        if (other.tag == "TestGround")
+        {
+            isGrounded = true;
+        }
+        if(other.tag == "LeftSide")
+        {
+            playerOnLeft = true;
+        }
+        if (other.tag == "RightSide")
+        {
+            playerOnRight = true;
+        }
+        if (other.tag == "LeftWall")
+        {
+            playerOnLeftWall = true;
+        }
+        if (other.tag == "RightWall")
+        {
+            playerOnRightWall = true;
+        }
+
     }
 
     void OnTriggerExit(Collider other)
     {
-        isGrounded = false;
+        if (other.tag == "TestGround")
+        {
+            isGrounded = false;
+        }
+        if (other.tag == "LeftSide")
+        {
+            playerOnLeft = false;
+        }
+        if (other.tag == "RightSide")
+        {
+            playerOnRight = false;
+        }
+        if (other.tag == "LeftWall")
+        {
+            playerOnLeftWall = false;
+        }
+        if (other.tag == "RightWall")
+        {
+            playerOnRightWall = false;
+        }
     }
     void FixedUpdate()
     {
@@ -45,12 +89,26 @@ public class PlayerController : MonoBehaviour
         {
             player.AddForce(-transform.right * moveSpeed);
         }
-        //Moves the player right
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A) && playerOnLeftWall == true)
         {
-            player.AddForce(transform.right * moveSpeed);
+            player.isKinematic = true;
         }
-        //Jump
+        else if (Input.GetKey(KeyCode.D) && playerOnRightWall == true)
+        {
+            player.isKinematic = true;
+        }
+        else
+        {
+            player.isKinematic = false;
+        }
+        //Moves the player right
+       if (Input.GetKey(KeyCode.D))
+       {
+           player.AddForce(transform.right * moveSpeed);
+       }
+      
+      
+       //Jump
         if(Input.GetKeyDown(KeyCode.Space) && chi > 0)
         {
             player.AddForce(transform.up * jumpStrength);
@@ -60,5 +118,9 @@ public class PlayerController : MonoBehaviour
         {
             chi = 2;
         }
+       //if (Input.GetKey(KeyCode.T))
+       //{
+       //    player.MovePosition(transform.position + transform.right * 1);
+       //}
     }
 }
