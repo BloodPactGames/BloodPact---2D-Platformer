@@ -20,10 +20,6 @@ public class PlayerController : MonoBehaviour
 
 	public static int jumps; //Shows animation Scrip when Player is On the ground
 
-	//I am the best this is a change
-
-
-	//THIS IS MY CHANGE DAN
 
 	void Start () 
     {
