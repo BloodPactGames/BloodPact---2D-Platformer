@@ -20,19 +20,15 @@ public class PlayerController : MonoBehaviour
 
 	public static int jumps; //Shows animation Scrip when Player is On the ground
 
-	//I am the best this is a change
-
-
-	//THIS IS MY CHANGE DAN
 
 	void Start () 
     {
-		//chi = 3;
-		//moveSpeed = 100;
-		//jumpStrength =2000;
-		//WallContact = 0;
-		//ShlashYesNo = 2;
-       // player = GetComponent<Rigidbody>();
+		chi = 3;
+		moveSpeed = 100;
+		jumpStrength =2000;
+		WallContact = 0;
+		ShlashYesNo = 2;
+        player = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
