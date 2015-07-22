@@ -27,12 +27,12 @@ public class PlayerController : MonoBehaviour
 
 	void Start () 
     {
-		//chi = 3;
-		//moveSpeed = 100;
-		//jumpStrength =2000;
-		//WallContact = 0;
-		//ShlashYesNo = 2;
-       // player = GetComponent<Rigidbody>();
+		chi = 3;
+		moveSpeed = 100;
+		jumpStrength =2000;
+		WallContact = 0;
+		ShlashYesNo = 2;
+        player = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
