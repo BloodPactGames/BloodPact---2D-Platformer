@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Protagonist_Player\PlayerController.cs">
     <Files>
-      <File FileName="Assets\Protagonist_Player\PlayerController.cs" Line="29" Column="19" />
+      <File FileName="Assets\ArcherAI.cs" Line="7" Column="5" />
+      <File FileName="Assets\Protagonist_Player\PlayerController.cs" Line="23" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
